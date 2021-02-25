@@ -113,7 +113,7 @@ public class MySinglyLinkedList implements SinglyLinkedListADT {
         }
     }
 
-//kuch kami hai is method me
+
     @Override
     public int removeLast() {
         if (isEmpty()) {
@@ -130,10 +130,13 @@ public class MySinglyLinkedList implements SinglyLinkedListADT {
                 head = null;
                 tail = null;
                 size--;
-                return -1;
+
             } else {
-                return -1;
+                previous.setNext(null);
+                tail = previous;
+                size--;
             }
+            return temp.getData();
         }
     }
 
